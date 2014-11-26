@@ -17,7 +17,7 @@ module SassC::Lib
     # };
     layout :source_string, :pointer,
       :output_string, :string,
-      # :options, SassOptions,
+      :options, SassC::Lib::SassOptions,
       :error_status, :int,
       :error_message, :string,
       :c_functions, :pointer,
@@ -29,7 +29,7 @@ module SassC::Lib
       ctx = SassC::Lib::Context.new(ptr)
 
       ctx[:source_string] = FFI::MemoryPointer.from_string(input_string || "")
-      ctx[:options] = SassOptions.create(options)
+      ctx[:options] = SassC::Lib::SassOptions.create(options)
 
       ctx
     end
