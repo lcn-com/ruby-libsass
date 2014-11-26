@@ -17,7 +17,7 @@ module SassC::Lib
     # };
     layout :source_string, :pointer,
       :output_string, :string,
-      :options, SassOptions,
+      # :options, SassOptions,
       :error_status, :int,
       :error_message, :string,
       :c_functions, :pointer,
